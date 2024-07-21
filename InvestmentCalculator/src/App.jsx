@@ -33,11 +33,11 @@ function handleInputChange(inputIdentifier, newValue){
     <>
     <Header path={path} headLine={headLine}/>
     <InputContainer className="input-container" >
-    <UserInput onChange={handleInputChange} userInput={userInput}/>
-      {/* <UserInput inputName="initial Investment" />
-      <UserInput inputName="annual Investment" />
-      <UserInput inputName="expected Return" />
-      <UserInput inputName="duration"/> */}
+    {/* <UserInput onChange={handleInputChange} userInput={userInput}/> */}
+      <UserInput inputName="initial Investment" onChange={handleInputChange} />
+      <UserInput inputName="annual Investment" onChange={handleInputChange} />
+      <UserInput inputName="expected Return" onChange={handleInputChange} />
+      <UserInput inputName="duration" onChange={handleInputChange} />
     </InputContainer>
     <Result userInput={userInput}/>
     </>
