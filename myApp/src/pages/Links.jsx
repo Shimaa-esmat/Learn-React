@@ -1,6 +1,4 @@
-import AddLink from "../components/Link"
-
-export default function Links(){
+function Links({children}) {
     return (
         <>
             <h1>
@@ -11,9 +9,11 @@ export default function Links(){
                 + Add new link
             </button>
             <div className="links">
-            <AddLink/>
-            
+                {children}
             </div>
         </>
     )
 }
+
+
+export default Links

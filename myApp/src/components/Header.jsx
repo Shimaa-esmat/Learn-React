@@ -12,7 +12,8 @@ export default function Header(){
                 <button className='header-profile'> <img src={profileLogo} alt='' /> profile details </button>
             </div>
             <button className='preview'>
-=            preview </button>
+            preview 
+            </button>
 
         </header>
     )
