@@ -5,7 +5,7 @@ import profileLogo from '../assets/images/icon-profile-details-header.svg'
 
 export default function Header(){
     return (
-        <header>
+        <header className='edit-page'>
             <img src={logo} alt="logo" />
             <div className='pages'>
                 <button className='header-link'> <img src={linkLogo} alt='' /> links </button>
@@ -14,7 +14,6 @@ export default function Header(){
             <button className='preview'>
             preview 
             </button>
-
         </header>
     )
 }
