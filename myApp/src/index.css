@@ -1,37 +1,87 @@
 @font-face {
-    font-family: "bold" ;
-    src: url('./assets/fonts/instrument-sans-bold.woff2');
-}
-@font-face {
-    font-family: "semi-bold" ;
-    src: url('./assets/fonts/instrument-sans-semi-bold.woff2');
-}
-@font-face {
-    font-family: "regular" ;
-    src: url('./assets/fonts/instrument-sans-regular.woff2');
-}
-
-*{
-    box-sizing: border-box;
     font-family: "bold";
+    src: url('./assets/fonts/instrument-sans-bold.woff2') format('woff2');
 }
-
-.edit-page {
+@font-face {
+    font-family: "semi-bold";
+    src: url('./assets/fonts/instrument-sans-semi-bold.woff2') format('woff2');
+}
+@font-face {
     font-family: "regular";
-    display: flex;
-
+    src: url('./assets/fonts/instrument-sans-regular.woff2') format('woff2');
 }
+* {
+    box-sizing: border-box;
+    font-family: "bold", sans-serif;
+    color: rgb(250, 251, 251);
+}
+#root {
+    height:100vh;
+    display: grid;
+    display: grid;
+    grid-template-areas:
+        'header header header header'
+        'image link link link';
+    grid-template-rows: auto 1fr; 
+    justify-content: space-around;
+    gap: 25px;
+}
+.logo, .pages {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.edit-page {
+    font-family: "regular", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(60px);
+    padding:10px 20px ;
+    /* position: fixed; */
+    width: 100%;
+    height: 50px;
+    grid-area: header;
+    z-index: 5;
+}
+
+
 .edit-page button {
     background: transparent;
-    border: transparent;
+    border: none;
+    background-color: #e69caa5d;
+    /* background-image: linear-gradient( 145deg, #FFA6B7 1%, #1E2AD2 100%); */
 }
 
+
+.link-area {
+    grid-area: link;
+    background-color: rgba(255, 255, 255, 0.048);
+    backdrop-filter: blur(5px);    grid-area: link;
+}
+.illustration-container{
+    grid-area: image;
+    height: 100%;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.048);
+    backdrop-filter: blur(5px);
+}
+
+.illustration {
+    
+    background: url('./assets/images/illustration-phone-mockup.svg') no-repeat center center/ cover;
+    background-size: 270px;
+    height: 100%;
+
+}
+
+.profile-data {
+    display: none;
+}
 
 body {
     height: 100vh;
-    background-image: linear-gradient( 135deg, #FFCF71 1px, #2376DD 100%);
+    background-image: linear-gradient(135deg, #FFA6B7 10%, #1E2AD2 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-

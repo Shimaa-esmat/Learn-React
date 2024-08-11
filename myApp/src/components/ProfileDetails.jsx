@@ -3,7 +3,7 @@
 export default function ProfileDetails(){
     return (
         <>
-            <form action="">
+            <form action="" className="profile-data"> 
                 <div className="picture">
                 <input type="file" id="myFile" name="filename"/>
                 </div>

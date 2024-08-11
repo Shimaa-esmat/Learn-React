@@ -1,6 +1,6 @@
 function Links({children}) {
     return (
-        <>
+        <div className="link-area">
             <h1>
                 Customize your links
             </h1>
@@ -11,7 +11,7 @@ function Links({children}) {
             <div className="links">
                 {children}
             </div>
-        </>
+        </div>
     )
 }
 
