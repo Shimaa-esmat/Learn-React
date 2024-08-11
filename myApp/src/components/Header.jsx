@@ -6,16 +6,16 @@ import profileLogo from '../assets/images/icon-profile-details-header.svg'
 
 export default function Header(){
     return (
-        <header className='edit-page'>
+        <header className='edit-page brd-rds'>
         <div className='logo'>
             <img src={logo} alt="logo" />
             <h1>devlinks</h1>
         </div>
             <div className='pages'>
-                <button className='header-link'> <img src={linkLogo} alt='' /> links </button>
-                <button className='header-profile'> <img src={profileLogo} alt='' /> profile details </button>
+                <button className='header-link btn-center'> <img src={linkLogo} alt='' /> links </button>
+                <button className='header-profile btn-center'> <img src={profileLogo} alt='' /> profile details </button>
             </div>
-            <button className='preview'>
+            <button className='preview btn-center'>
             preview 
             </button>
         </header>

@@ -35,18 +35,31 @@ const customOption = (props) => (
 export default function AddLink() {
     return (
         <div className="link">
-            <div className="">
+            <div className='lnk-info'>
+            <div className="no-link">
                 <img src={drogAndDrop} alt="Drag and Drop Icon" />
                 link {}
             </div>
+            <button className='btn-rmv btn-center'>
+            Remove
+            </button>
+            </div>
+            <div className='input'>
+
+            <div className='plt-form'>
             <label htmlFor="platform">Platform</label>
             <Select
                 options={social}
                 components={{ Option: customOption, SingleValue: customValue }}
             />
+            </div>
+            <div className='link-add'>
             <label htmlFor="linkIn">Link</label>
             <img src={link} alt='link'/>
             <input type="text" id="linkIn" placeholder="Enter link" />
+            </div>
+            </div>
+
 
         </div>
     );

@@ -2,7 +2,7 @@
 
 function IllustrationPhone (){
     return (
-        <div className="illustration-container">
+        <div className="illustration-container brd-rds">
             <div className="illustration">
             
             </div>
