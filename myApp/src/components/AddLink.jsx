@@ -34,7 +34,7 @@ const customOption = (props) => (
 
 export default function AddLink() {
     return (
-        <div className="link">
+        <div className="link brd-rds">
             <div className='lnk-info'>
             <div className="no-link">
                 <img src={drogAndDrop} alt="Drag and Drop Icon" />
@@ -44,19 +44,23 @@ export default function AddLink() {
             Remove
             </button>
             </div>
-            <div className='input'>
-
-            <div className='plt-form'>
+            <div className='link-field'>
+            <div className='input-field'>
             <label htmlFor="platform">Platform</label>
-            <Select
+            <Select 
+                className='input-platform'
                 options={social}
                 components={{ Option: customOption, SingleValue: customValue }}
             />
             </div>
-            <div className='link-add'>
-            <label htmlFor="linkIn">Link</label>
+            <div className='input-field'>
+            <label htmlFor="platform-link">Link</label>
+            <div className='link-input'>
+            {/* <span> */}
             <img src={link} alt='link'/>
-            <input type="text" id="linkIn" placeholder="Enter link" />
+            {/* </span> */}
+            <input type="text" id="platform-link" className='input-platform' placeholder="Enter link" />
+            </div>
             </div>
             </div>
 
