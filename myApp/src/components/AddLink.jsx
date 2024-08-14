@@ -1,4 +1,5 @@
 import Select, { components } from 'react-select';
+import { useState } from 'react';
 import drogAndDrop from "../assets/images/icon-drag-and-drop.svg"
 import github from "../assets/images/icon-github-gray.svg"
 import youtube from "../assets/images/icon-youtube-gray.svg"
@@ -32,25 +33,38 @@ const customOption = (props) => (
     </components.Option>
 )
 
-export default function AddLink() {
+const customStyles = {
+    menu: (provided) => ({
+        ...provided,
+        zIndex: 1000, // Ensure this is higher than any surrounding components
+    }),
+    container: (provided) => ({
+        ...provided,
+        position: 'relative', // Ensure the container is positioned correctly
+    }),
+};
+
+
+export default function AddLink({number,removeClick}) {
     return (
         <div className="link brd-rds">
             <div className='lnk-info'>
             <div className="no-link">
                 <img src={drogAndDrop} alt="Drag and Drop Icon" />
-                link {}
+                link {number}
             </div>
-            <button className='btn-rmv btn-center'>
+            <button className='btn-rmv btn-center' onClick={removeClick}>
             Remove
             </button>
             </div>
-            <div className='link-field'>
+            <div className='data-field'>
             <div className='input-field'>
             <label htmlFor="platform">Platform</label>
             <Select 
                 className='input-platform'
                 options={social}
                 components={{ Option: customOption, SingleValue: customValue }}
+                styles={customStyles}
             />
             </div>
             <div className='input-field'>

@@ -1,4 +1,4 @@
-function Links({click, addLink}) {
+function Links({addClick, addLink}) {
     return (
         <div className="link-area brd-rds">
         <div className="link-added">
@@ -7,7 +7,7 @@ function Links({click, addLink}) {
                 Customize your links
             </h1>
             <p>Add/remove/edit links below and then share all Your profiles with the world!</p>
-            <button className="add-link btn-cnter" onClick={click}>
+            <button className="add-link btn-cnter" onClick={addClick}>
                 + Add new link
             </button>
             </div>
