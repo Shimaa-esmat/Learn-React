@@ -34,16 +34,39 @@ const customOption = (props) => (
 )
 
 const customStyles = {
+    menuPortal: base => ({
+        ...base,
+        transform: 'translateZ(0)',
+        color: 'black',
+
+    }),
     menu: (provided) => ({
         ...provided,
-        zIndex: 1000, // Ensure this is higher than any surrounding components
+        // zIndex: 1000, 
+        // position: 'relative',
+    }),
+    control: (provided) => ({
+        ...provided,
+        color: 'black',
+
+        zIndex: 1, 
     }),
     container: (provided) => ({
         ...provided,
-        position: 'relative', // Ensure the container is positioned correctly
+        color: 'black',
+        zIndex: 1, 
     }),
-};
+    option: (provided, state) => ({
+        ...provided,
+        color: state.isSelected ? 'white' : 'black',
+    }),
+ singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = 'opacity 300ms';
 
+    return { ...provided, opacity, transition };
+  },
+};
 
 export default function AddLink({number,removeClick}) {
     return (
@@ -71,6 +94,7 @@ export default function AddLink({number,removeClick}) {
             <label htmlFor="platform-link">Link</label>
             <div className='link-input'>
             {/* <span> */}
+            
             <img src={link} alt='link'/>
             {/* </span> */}
             <input type="text" id="platform-link" className='input-platform' placeholder="Enter link" />

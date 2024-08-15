@@ -59,7 +59,7 @@ header.edit-page, .pvw-hd {
     width: 100%;
     height: 60px;
     grid-area: header;
-    z-index: 5;
+    /* z-index: 5; */
 }
 
 button {
@@ -217,20 +217,20 @@ button:hover {
     -o-border-radius: 50%;
 }
 
+
+
+
 .input-field ,.link{
     display: flex;
     width: 100%;
     /*text-align: center;
     */
-
+    /* z-index: -55555555; */
     padding: 10px;
     align-items: center;
     justify-content: space-between;  
 }
 
-.picture{
-
-}
 
 
 .brd-rds {

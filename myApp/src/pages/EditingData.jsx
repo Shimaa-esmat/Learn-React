@@ -1,6 +1,7 @@
 import Header from "../components/Header.jsx"
 import Links from "../components/Links.jsx"
 import AddLink from "../components/AddLink.jsx"
+import initProfile from '../assets/images/icon-frontend-mentor-gray.svg'
 import IllustrationPhone from "../components/IllustrationPhone.jsx"
 import ProfileDetails from "../components/ProfileDetails.jsx"
 import { useState, useRef } from "react"
@@ -26,11 +27,21 @@ function EditingData({active}){
         setToggleComp(true);
     }
 
-    const [profile,setProfile] = useState()
-    // function handleProfile(e){
-    //     setProfile(URL.createObjectURL(e.target.files[0]))
-    // }
+    const [profile, setProfile] = useState([{
+        profilePicture: initProfile,
+        firstName: 'name',
+        lastName: 'name',
+    }]);
 
+    function handleProfilePicture(e) {
+        const newPicture = URL.createObjectURL(e.target.files[0]);
+        setProfile(prevProfile => [
+            {
+                ...prevProfile[0],
+                profilePicture: newPicture,
+            }
+        ]);
+    }
 
     // const linkNunber = addLink.length
     console.log(profile)
@@ -43,12 +54,11 @@ function EditingData({active}){
         activeProfileDetialsClick={()=>{setToggleComp(true);}}
         activeLinkClick={()=>{setToggleComp(false);
         }}/>
-        <IllustrationPhone image={profile}/>
+        <IllustrationPhone image={profile[0].profilePicture}/>
         {(toggleComp ?
-            <ProfileDetails handleProfile={(e)=>{setProfile(URL.createObjectURL(e.target.files[0]))}}/> 
+            <ProfileDetails handleProfile={(e) => handleProfilePicture(e)}/> 
             :<Links addClick={handleAddClick} addLink={addLink} />)}
-        {/* <Links addClick={handleAddClick} addLink={addLink} /> */}
-        {/* <ProfileDetails /> */}
+
         </>
     )
 }
