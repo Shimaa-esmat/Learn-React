@@ -13,7 +13,7 @@
 * {
     box-sizing: border-box;
     /* color:#fadbe1; */
-    color: rgb(250, 251, 251);
+    /* color: rgb(250, 251, 251); */
     padding: 0;
     margin: 0;
 
@@ -107,6 +107,7 @@ button:hover {
     text-align: start;
 
 }
+
 
 .lnk-info {
     width: 95%;
@@ -204,21 +205,31 @@ button:hover {
     outline: none;
 }
 
-.illustration > img {
+.profile-info > img {
     width:85px;
     height: 85px;
     border-radius: 50%;
     position: relative;
     top: 129px;
     left: 207px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
 }
 
+.icon-container{
+    /* position: relative; */
+    width:100px;
+    height: 550px;
+    background-color: #1E2AD2;
 
+}
 
+ 
+select option{
+    color: #000;
+}
 
 .input-field ,.link{
     display: flex;

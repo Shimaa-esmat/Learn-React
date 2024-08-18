@@ -7,9 +7,11 @@ function App(){
   
   return (
     <>
-    {page ? <EditingData active={()=>{
+    {page ?
+    <EditingData active={()=>{
       setPage(false)
-    }}/>: <Preview 
+    }}/>
+    :<Preview 
     active={()=>{
       setPage(true)
     }}/>}

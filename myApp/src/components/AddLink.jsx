@@ -20,6 +20,9 @@ const social = [
     { value: "stack", label: "Slack", icon: stackOverFlow },
     { value: "linkedin", label: "LinkedIn", icon: linkedin },
 ];
+
+
+
 const customValue = ({data}) => (
     <div>
         <img src={data.icon} alt={data.label}/>
@@ -29,7 +32,7 @@ const customValue = ({data}) => (
 const customOption = (props) => (
     <components.Option {...props}>
         <img src={props.data.icon} alt={props.data.label}/>
-        {props.data.label}
+        {  props.data.label}
     </components.Option>
 )
 
@@ -37,35 +40,40 @@ const customStyles = {
     menuPortal: base => ({
         ...base,
         transform: 'translateZ(0)',
-        color: 'black',
+        // color: 'black',
 
     }),
     menu: (provided) => ({
+        // color: 'black',
         ...provided,
         // zIndex: 1000, 
         // position: 'relative',
     }),
     control: (provided) => ({
         ...provided,
-        color: 'black',
+        // color: 'black',
 
         zIndex: 1, 
     }),
     container: (provided) => ({
         ...provided,
-        color: 'black',
+        // color: 'black',
         zIndex: 1, 
     }),
     option: (provided, state) => ({
         ...provided,
-        color: state.isSelected ? 'white' : 'black',
+        // padding: '140px',
+        color: 'black',
     }),
- singleValue: (provided, state) => {
-    const opacity = state.isDisabled ? 0.5 : 1;
-    const transition = 'opacity 300ms';
+ singleValue: (provided) => ({
+    ...provided,
+    // const opacity = state.isDisabled ? 0.5 : 1;
+    // const transition = 'opacity 300ms';
+    color: 'black',
+    display: "flex",
+    alignItems: "center"
 
-    return { ...provided, opacity, transition };
-  },
+}),
 };
 
 export default function AddLink({number,removeClick}) {
@@ -83,12 +91,29 @@ export default function AddLink({number,removeClick}) {
             <div className='data-field'>
             <div className='input-field'>
             <label htmlFor="platform">Platform</label>
-            <Select 
+            {/* <Select 
                 className='input-platform'
                 options={social}
                 components={{ Option: customOption, SingleValue: customValue }}
+                // singleValue 
                 styles={customStyles}
-            />
+            /> */}
+            {/* <select className='input-platform'>
+            {social.map((social) => (
+            
+                <option key={social.value} value={social.value}>
+                <img src={social.icon} alt={social.icon}/>
+                {social.label}
+                </option>
+            
+                ))}
+          </select> */}
+          <select name='state' style={{height: '45px ', fontFamily:"Arial Font Awesome"}}>
+            <option value='xx'>&#xf039; &nbsp; All States</option>
+            <option value='enabled' >&#xf09a; &nbsp; Enabled</option>
+            <option value='paused'>&#xf04c; &nbsp; Paused</option>
+            <option value='archived'>&#xf023; &nbsp; Archived</option>
+        </select>
             </div>
             <div className='input-field'>
             <label htmlFor="platform-link">Link</label>
