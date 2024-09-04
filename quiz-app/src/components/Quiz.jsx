@@ -41,7 +41,8 @@ export default function Quiz(){
     return (
         <div id='quiz'>
             <div id='question'>
-                <QuestionTimer 
+                <QuestionTimer
+                    key={activeQuestionIndex}
                     timeout={timer}
                     onTimeout={(() => handleSelectAnswer(null))}
                 />
