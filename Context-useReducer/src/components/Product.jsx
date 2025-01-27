@@ -1,11 +1,9 @@
-import { useContext } from 'react';
-
-import { CartContext } from '../store/shopping-cart-context.jsx';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../store/cartSlice';
 
 export default function Product({ id, image, title, price, description }) {
-  const { addItemToCart } = useContext(CartContext);
+  const dispatch = useDispatch();
 
-  console.log(addItemToCart)
   return (
     <article className="product">
       <img src={image} alt={title} />
@@ -16,7 +14,9 @@ export default function Product({ id, image, title, price, description }) {
           <p>{description}</p>
         </div>
         <p className="product-actions">
-          <button onClick={() => addItemToCart(id)}>Add to Cart</button>
+          <button onClick={() => dispatch(addItemToCart(id))}>
+            Add to Cart
+          </button>
         </p>
       </div>
     </article>

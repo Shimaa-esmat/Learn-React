@@ -1,8 +1,9 @@
-import { useContext } from 'react';
-import { CartContext } from '../store/shopping-cart-context.jsx';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateItemQuantity } from '../store/cartSlice';
 
 export default function Cart() {
-  const { items, updateItemQuantity } = useContext(CartContext);
+  const items = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
 
   const totalPrice = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -25,11 +26,17 @@ export default function Cart() {
                   <span> ({formattedPrice})</span>
                 </div>
                 <div className="cart-item-actions">
-                  <button onClick={() => updateItemQuantity(item.id, -1)}>
+                  <button
+                    onClick={() => dispatch(updateItemQuantity({
+                      productId: item.id, amount: -1 
+                    }))}>
                     -
                   </button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => updateItemQuantity(item.id, 1)}>
+                  <button
+                    onClick={() => dispatch(updateItemQuantity({
+                      productId: item.id, amount: 1 
+                    }))}>
                     +
                   </button>
                 </div>
